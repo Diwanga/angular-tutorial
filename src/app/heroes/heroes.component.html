@@ -1,1 +1,26 @@
 <p>heroes works!</p>
+<!--<h2>{{hero.id}}</h2>-->
+<!--<h2>{{hero.name | lowercase}}</h2>-->
+
+<div *ngIf="selectedHero">
+<!--  //When selectedHero is undefined, the ngIf removes the hero detail from the DOM.-->
+
+  <label for="1"> HERO NAME </label>
+  <input type="text" name="name" id="1" [(ngModel)]="selectedHero.name" placeholder="HERO">
+
+</div>
+
+<div>
+  <ul class="heroes">
+    <li  *ngFor="let hero of heroes"
+         [class.selected]="hero === selectedHero"
+         (click)="onSelect(hero)">
+      <span>{{hero.id}} </span>
+      <span>{{hero.name | lowercase}}</span>
+    </li>
+  </ul>
+
+</div>
+
+
+
