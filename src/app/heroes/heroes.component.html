@@ -2,13 +2,15 @@
 <!--<h2>{{hero.id}}</h2>-->
 <!--<h2>{{hero.name | lowercase}}</h2>-->
 
-<div *ngIf="selectedHero">
-<!--  //When selectedHero is undefined, the ngIf removes the hero detail from the DOM.-->
+<!--<div *ngIf="selectedHero">-->
+<!--&lt;!&ndash;  //When selectedHero is undefined, the ngIf removes the hero detail from the DOM.&ndash;&gt;-->
 
-  <label for="1"> HERO NAME </label>
-  <input type="text" name="name" id="1" [(ngModel)]="selectedHero.name" placeholder="HERO">
+<!--  <label for="1"> HERO NAME </label>-->
+<!--  <input type="text" name="name" id="1" [(ngModel)]="selectedHero.name" placeholder="HERO">-->
 
-</div>
+<!--</div>-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!--one way data binding ) ) PROPERTY BINDING  ( (-->
 
 <div>
   <ul class="heroes">

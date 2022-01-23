@@ -1,10 +1,18 @@
 
 
 
-<app-heroes></app-heroes>
 <h1>{{ title }}</h1>
-<!--/ interpolation-->
+<nav>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<nav>
+  <a routerLink="/">HOME</a>
+</nav>
+<!--<app-heroes></app-heroes>-->
+<router-outlet></router-outlet>
 
+<!--/ interpolation-->
+<app-messages></app-messages>
 
 
 
