@@ -1,4 +1,14 @@
 <p>heroes works!</p>
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+</div>
+
 <!--<h2>{{hero.id}}</h2>-->
 <!--<h2>{{hero.name | lowercase}}</h2>-->
 
@@ -12,17 +22,27 @@
 <!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
 <!--one way data binding ) ) PROPERTY BINDING  ( (-->
 
-<div>
-  <ul class="heroes">
-    <li  *ngFor="let hero of heroes"
-         >
-      <a routerLink="/detail/{{hero.id}}">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </a>
-    </li>
-  </ul>
+<!--<div>-->
+<!--  <ul class="heroes">-->
+<!--    <li  *ngFor="let hero of heroes"-->
+<!--         >-->
+<!--      <a routerLink="/detail/{{hero.id}}">-->
+<!--        <span class="badge">{{hero.id}}</span> {{hero.name}}-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
 
-</div>
+<!--</div>-->
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+  </li>
+</ul>
 
 
 
