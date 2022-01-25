@@ -19,7 +19,7 @@ export class HeroService {
   //   return heroes;
   // }
 
-  /** GET heroes from the server */
+  // /** GET heroes from the server */
   // getHeroes(): Observable<Hero[]> {
   //   return this.http.get<Hero[]>(this.heroesUrl)
   // }
@@ -36,7 +36,7 @@ export class HeroService {
   //   this.messageService.add(`HeroService: fetched hero id=${id}`);
   //   return of(hero);
   // }
-  /** GET hero by id. Will 404 if id not found */
+  // /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
